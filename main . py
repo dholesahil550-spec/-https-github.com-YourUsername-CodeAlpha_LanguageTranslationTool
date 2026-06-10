@@ -1,0 +1,19 @@
+from deep_translator import GoogleTranslator
+
+print("=== Language Translation Tool ===")
+
+text = input("Enter text: ")
+source_lang = input("Source language (en, hi, fr, etc): ")
+target_lang = input("Target language (en, hi, fr, etc): ")
+
+try:
+    translated = GoogleTranslator(
+        source=source_lang,
+        target=target_lang
+    ).translate(text)
+
+    print("\nTranslated Text:")
+    print(translated)
+
+except Exception as e:
+    print("Error:", e)
